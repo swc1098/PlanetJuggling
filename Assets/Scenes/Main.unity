@@ -377,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ffc938c4a9bce74cb9210e76853226d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 500
+  speed: 400
   jumpSpeed: 10
 --- !u!1 &454710418
 GameObject:
@@ -575,8 +575,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -166, y: -201}
-  m_SizeDelta: {x: 300, y: 200}
+  m_AnchoredPosition: {x: -179, y: -281}
+  m_SizeDelta: {x: 273, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1440271976
 MonoBehaviour:
@@ -610,7 +610,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: '
+  m_Text: 'Bounce Count:'
 --- !u!222 &1440271977
 CanvasRenderer:
   m_ObjectHideFlags: 0

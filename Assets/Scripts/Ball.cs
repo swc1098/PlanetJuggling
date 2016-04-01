@@ -15,7 +15,7 @@ public class Ball : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {     
+    {
         score = 0;
 
         power = 10.0f;
@@ -35,7 +35,7 @@ public class Ball : MonoBehaviour
         if (c.gameObject.tag == "Player")
         {
             Debug.Log("Success!");
-            Vector3 force = new Vector3(power,power, power);
+            Vector3 force = new Vector3(power, power, power);
             rb.AddForce(force, ForceMode.Acceleration);
             score++;
         }
@@ -44,7 +44,7 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-        if(c.gameObject.tag == "Planet")
+        if (c.gameObject.tag == "Planet")
         {
             Destroy(gameObject);
             Destroy(c.gameObject);
@@ -52,7 +52,7 @@ public class Ball : MonoBehaviour
             scoreKeep.enabled = false;
             gameOver.gameObject.SetActive(true);
             gameOver.enabled = true;
-            
+
         }
     }
 }

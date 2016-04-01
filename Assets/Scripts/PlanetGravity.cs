@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class PlanetGravity : MonoBehaviour {
+public class PlanetGravity : MonoBehaviour
+{
 
     public float range = 10f;
     Rigidbody self;
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         self = gameObject.GetComponent<Rigidbody>();
-	}
+    }
 
     // Update is called once per frame
     void Update()
@@ -33,7 +34,7 @@ public class PlanetGravity : MonoBehaviour {
 
                 rb.AddForce(offset / offset.sqrMagnitude * self.mass);
 
-               // Debug.Log(rb);
+                // Debug.Log(rb);
             }
         }
     }
