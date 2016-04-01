@@ -8,11 +8,13 @@ public class Player : MonoBehaviour
     // Fiddle with it until it's comfortable.
     public float speed;
     public float jumpSpeed;
+    public bool falling;
     private Rigidbody rb;
 
     // Use this for initialization
     void Start()
     {
+        falling = false;
         rb = gameObject.GetComponent<Rigidbody>();
     }
 
@@ -20,20 +22,27 @@ public class Player : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) && falling != true)
         {
             transform.RotateAround(GameObject.Find("MainPlanet").transform.position, new Vector3(0, 0, 1.0f), speed * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) && falling != true)
         {
             transform.RotateAround(GameObject.Find("MainPlanet").transform.position, new Vector3(0, 0, -1.0f), speed * Time.deltaTime);
         }
-        /*
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) && falling != true)
         {
-            transform.Translate(Vector3.up * Time.deltaTime * jumpSpeed, Space.Self);
+            rb.AddRelativeForce(Vector3.up * 120);
+            falling = true;
         }
-        */
+    }
+
+    public void OnCollisionStay(Collision c)
+    {
+        if(c.gameObject.tag != "Coin")
+        {
+            falling = false;
+        }
     }
 }

@@ -16,7 +16,7 @@ GameObject:
   - 135: {fileID: 13598174}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -93,9 +93,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 0
-  scoreKeep: {fileID: 0}
-  gameOver: {fileID: 0}
-  score: 0
 --- !u!135 &13585978
 SphereCollider:
   m_ObjectHideFlags: 1

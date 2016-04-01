@@ -29,7 +29,7 @@ public class Ball : MonoBehaviour
     {
         if (c.gameObject.tag == "Player")
         {
-            Debug.Log("Success!");
+            //Debug.Log("Success!");
             Vector3 force = new Vector3(power, power, power);
             rb.AddForce(force, ForceMode.Acceleration);
             gm.bounceCount++;
@@ -45,6 +45,7 @@ public class Ball : MonoBehaviour
             Destroy(c.gameObject);
             Destroy(GameObject.Find("Player"));
             Destroy(GameObject.Find("CoinSpawner"));
+            gm.scoreKeep.enabled = false;
             gm.ballBounce.enabled = false;
             gm.gameOver.gameObject.SetActive(true);
             gm.gameOver.enabled = true;

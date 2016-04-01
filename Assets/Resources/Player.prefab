@@ -93,6 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 400
   jumpSpeed: 10
+  falling: 0
 --- !u!135 &13509288
 SphereCollider:
   m_ObjectHideFlags: 1
