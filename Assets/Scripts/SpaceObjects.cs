@@ -17,7 +17,7 @@ public class SpaceObjects : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision c)
+    void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.tag == "Ball")
         {
