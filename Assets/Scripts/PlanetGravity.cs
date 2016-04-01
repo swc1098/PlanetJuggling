@@ -26,7 +26,7 @@ public class PlanetGravity : MonoBehaviour
 
 
             //if (rb != null && rb != self && !(listOfBodies.Contains(rb)) && rb != GameObject.Find("Player").GetComponent<Rigidbody>())
-            if (rb != null && rb != self && !(listOfBodies.Contains(rb)))
+            if (rb != null && rb != self && !(listOfBodies.Contains(rb)) && rb.tag != "Coin")
             {
                 listOfBodies.Add(rb);
 

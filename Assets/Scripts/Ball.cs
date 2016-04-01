@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
 public class Ball : MonoBehaviour
@@ -9,15 +8,12 @@ public class Ball : MonoBehaviour
 
     private Rigidbody rb;
 
-    public Text scoreKeep;
-    public Text gameOver;
-    public int score;
+    private GameManager gm;
 
     // Use this for initialization
     void Start()
     {
-        score = 0;
-
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
         power = 10.0f;
 
         rb = gameObject.GetComponent<Rigidbody>();
@@ -27,7 +23,6 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreKeep.text = "Bounce Count: " + score.ToString();
     }
 
     void OnTriggerEnter(Collider c)
@@ -37,7 +32,7 @@ public class Ball : MonoBehaviour
             Debug.Log("Success!");
             Vector3 force = new Vector3(power, power, power);
             rb.AddForce(force, ForceMode.Acceleration);
-            score++;
+            gm.bounceCount++;
         }
 
     }
@@ -49,9 +44,10 @@ public class Ball : MonoBehaviour
             Destroy(gameObject);
             Destroy(c.gameObject);
             Destroy(GameObject.Find("Player"));
-            scoreKeep.enabled = false;
-            gameOver.gameObject.SetActive(true);
-            gameOver.enabled = true;
+            Destroy(GameObject.Find("CoinSpawner"));
+            gm.ballBounce.enabled = false;
+            gm.gameOver.gameObject.SetActive(true);
+            gm.gameOver.enabled = true;
 
         }
     }
