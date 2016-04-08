@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// From Sung
+// DOCUMENT YOUR CODE!!!!!!!!!
+
 public class Ball : MonoBehaviour
 {
 

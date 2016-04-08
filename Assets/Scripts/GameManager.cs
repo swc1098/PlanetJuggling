@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    // handle zooming out and zooming in
+    // Figure out the camera's current position and then lerp to desired zoomsize
     public void zoomOut()
     {
         for (float i = minCameraZoom; i < maxCameraZoom; i++)
@@ -85,6 +85,7 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+	// Figure out the camera's current position and then lerp to desired zoomsize
     public void zoomIn()
     {
         for (float i = maxCameraZoom; i > minCameraZoom; i--)

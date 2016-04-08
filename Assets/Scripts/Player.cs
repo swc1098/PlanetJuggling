@@ -8,9 +8,6 @@ public class Player : MonoBehaviour
     // Fiddle with it until it's comfortable.
     public float speed;
 
-    // check if player is currently falling
-    public bool falling;
-
     // for force manipulaton on gameobject
     private Rigidbody rb;
 
@@ -23,10 +20,7 @@ public class Player : MonoBehaviour
 
     // Use this for initialization
     void Start()
-    {
-        // player is not jumping or falling
-        falling = false;
-
+    { 
         // find player's rigidbody
         rb = gameObject.GetComponent<Rigidbody>();
 
@@ -38,18 +32,18 @@ public class Player : MonoBehaviour
     void Update()
     {
         // basic movement around planet
-        if (Input.GetKey(KeyCode.A) && falling != true)
+        if (Input.GetKey(KeyCode.A))
         {
             transform.RotateAround(GameObject.Find("MainPlanet").transform.position, new Vector3(0, 0, 1.0f), speed * Time.deltaTime);
         }
 
-        if (Input.GetKey(KeyCode.D) && falling != true)
+        if (Input.GetKey(KeyCode.D))
         {
             transform.RotateAround(GameObject.Find("MainPlanet").transform.position, new Vector3(0, 0, -1.0f), speed * Time.deltaTime);
         }
 
         // add force to player's jump
-        if (Input.GetKeyDown(KeyCode.W) && falling != true)
+        if (Input.GetKeyDown(KeyCode.W))
         {
             //rb.AddRelativeForce(Vector3.up * 120);
             //falling = true;
@@ -61,6 +55,7 @@ public class Player : MonoBehaviour
     }
 
     // make sure that the player's falling bool is not affected by touching collectibles
+	/*
     public void OnCollisionStay(Collision c)
     {
         if(c.gameObject.tag != "Coin")
@@ -68,4 +63,5 @@ public class Player : MonoBehaviour
             falling = false;
         }
     }
+    */
 }
