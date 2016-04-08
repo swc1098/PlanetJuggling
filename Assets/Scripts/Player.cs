@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
             //falling = true;
             // spawns object on top of player. 
             ball = (GameObject)Instantiate(Resources.Load("Ball"), gameObject.transform.position * 2, Quaternion.identity) as GameObject;
-
+			ball.transform.SetParent(GameObject.Find("SolarSystem").transform);
             gm.information.enabled = false;
         }
     }
