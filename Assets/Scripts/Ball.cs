@@ -1,24 +1,27 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
+
+// From Sung
+// DOCUMENT YOUR CODE!!!!!!!!!
 
 public class Ball : MonoBehaviour
 {
 
     public float power;
+	public Vector3 direction;
 
     private Rigidbody rb;
 
-    public Text scoreKeep;
-    public Text gameOver;
-    public int score;
+    private GameManager gm;
+
+	private GameObject player;
 
     // Use this for initialization
     void Start()
     {
-        score = 0;
-
-        power = 10.0f;
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		player = GameObject.FindGameObjectWithTag ("Player");
+		updatePower ();
 
         rb = gameObject.GetComponent<Rigidbody>();
 
@@ -27,32 +30,43 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreKeep.text = "Bounce Count: " + score.ToString();
+		//Debug.Log (direction);
     }
 
     void OnTriggerEnter(Collider c)
     {
         if (c.gameObject.tag == "Player")
         {
-            Debug.Log("Success!");
-            Vector3 force = new Vector3(power, power, power);
-            rb.AddForce(force, ForceMode.Acceleration);
-            score++;
+            //Debug.Log("Success!");
+            //Vector3 force = new Vector3(power, power, power);
+			//rb.AddForce(power * direction, ForceMode.Acceleration);
+
+			direction = (transform.position - player.transform.position).normalized;
+			updatePower ();
+			rb.velocity = Vector3.zero;
+			rb.AddForceAtPosition(power * direction, transform.position);
+            gm.bounceCount++;
         }
 
     }
 
+	void updatePower () {
+		power = 100.0f * (1 + 0.05f * gm.bounceCount);
+	}
+
     void OnCollisionEnter(Collision c)
     {
-        if (c.gameObject.tag == "Planet")
-        {
-            Destroy(gameObject);
-            Destroy(c.gameObject);
-            Destroy(GameObject.Find("Player"));
-            scoreKeep.enabled = false;
-            gameOver.gameObject.SetActive(true);
-            gameOver.enabled = true;
-
-        }
+        //if (c.gameObject.tag == "Planet")
+        //{
+        //    Destroy(gameObject);
+        //    Destroy(c.gameObject);
+        //    Destroy(GameObject.Find("Player"));
+        //    Destroy(GameObject.Find("CoinSpawner"));
+        //    gm.scoreKeep.enabled = false;
+        //    gm.ballBounce.enabled = false;
+        //    gm.gameOver.gameObject.SetActive(true);
+        //    gm.gameOver.enabled = true;
+		//
+        //}
     }
 }
