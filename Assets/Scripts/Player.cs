@@ -30,16 +30,18 @@ public class Player : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        // basic movement around planet
+    {	
+		// basic movement around planet
         if (Input.GetKey(KeyCode.A))
         {
             transform.RotateAround(GameObject.Find("MainPlanet").transform.position, new Vector3(0, 0, 1.0f), speed * Time.deltaTime);
+			transform.Rotate(Vector3.left, 800f * Time.deltaTime);
         }
 
         if (Input.GetKey(KeyCode.D))
         {
             transform.RotateAround(GameObject.Find("MainPlanet").transform.position, new Vector3(0, 0, -1.0f), speed * Time.deltaTime);
+			transform.Rotate(Vector3.right, 800f * Time.deltaTime);
         }
 
         // add force to player's jump

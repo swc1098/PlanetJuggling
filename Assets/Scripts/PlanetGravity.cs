@@ -17,6 +17,9 @@ public class PlanetGravity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		// main planet spin animation
+		transform.Rotate(Vector3.up, 10f * Time.deltaTime);
+
         // create collision checks for everything within it's gravitational range
         Collider[] collision = Physics.OverlapSphere(transform.position, range);
 

@@ -42,8 +42,8 @@ public class GameManager : MonoBehaviour {
 	void Update ()
     {
         // update scores
-        ballBounce.text = "Bounce Count: " + bounceCount.ToString();
-        scoreKeep.text = "Score: " + score.ToString();
+        ballBounce.text = bounceCount.ToString();
+        scoreKeep.text = score.ToString();
 
         // just a check to see whether or not to zoom. Calls methods accordingly.
         if (zoomed == true)
