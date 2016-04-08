@@ -3,8 +3,9 @@ using System.Collections.Generic;
 
 public class PlanetGravity : MonoBehaviour
 {
-
+    // the range where gravity is applied
     public float range = 10f;
+
     Rigidbody self;
 
     // Use this for initialization
@@ -16,16 +17,19 @@ public class PlanetGravity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // create collision checks for everything within it's gravitational range
         Collider[] collision = Physics.OverlapSphere(transform.position, range);
 
         List<Rigidbody> listOfBodies = new List<Rigidbody>();
 
+        // for each object inside of the range, get the rigidbody of said object
         foreach (Collider c in collision)
         {
             Rigidbody rb = c.attachedRigidbody;
 
 
             //if (rb != null && rb != self && !(listOfBodies.Contains(rb)) && rb != GameObject.Find("Player").GetComponent<Rigidbody>())
+            // if the object is not a collectible and contains a rigidbody, have gravity affect it. 
             if (rb != null && rb != self && !(listOfBodies.Contains(rb)) && rb.tag != "Coin")
             {
                 listOfBodies.Add(rb);
@@ -38,6 +42,8 @@ public class PlanetGravity : MonoBehaviour
             }
         }
     }
+
+    // visual aid
     void OnDrawGizmos()
     {
         Gizmos.color = Color.cyan;

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SpaceObjects : MonoBehaviour
 {
+    // gets game manager in order to increment points. 
     private GameManager gm;
 
     // Use this for initialization
@@ -19,6 +20,7 @@ public class SpaceObjects : MonoBehaviour
 
     void OnTriggerEnter(Collider c)
     {
+        // if collected, then add points and destroy game object
         if (c.gameObject.tag == "Ball")
         {
             Destroy(gameObject);

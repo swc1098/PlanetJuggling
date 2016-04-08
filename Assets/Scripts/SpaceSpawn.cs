@@ -3,12 +3,17 @@ using System.Collections.Generic;
 
 public class SpaceSpawn : MonoBehaviour
 {
-
+    /// <summary>
+    /// range = The range that gravity affects
+    /// smallRange = the range where coins/collectibles are not allowed to spawn
+    /// </summary>
     public float range = 10.0f;
     public float smallRange = 4.0f;
 
+    // This allows instantiation of game object
     private GameObject coin;
 
+    // the range where objects are allowed to spawn
     private float xRange;
     private float yRange;
 
@@ -18,9 +23,10 @@ public class SpaceSpawn : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        // a hard coded number of collectibles
         coinCount = 40;
 
-
+        // create collectibles on map
         for (int x = 0; x < coinCount; x++)
         {
             setRandomLocation();
@@ -32,10 +38,12 @@ public class SpaceSpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // create a collider that detects every object that exists within the small range
         Collider[] collision = Physics.OverlapSphere(transform.position, smallRange);
 
         List<Rigidbody> listOfBodies = new List<Rigidbody>();
 
+        // using this, move it somewhere else
         foreach (Collider c in collision)
         {
             Rigidbody rb = c.attachedRigidbody;
@@ -47,6 +55,7 @@ public class SpaceSpawn : MonoBehaviour
         }
     }
 
+    // visual aid for determining positions
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
@@ -54,6 +63,7 @@ public class SpaceSpawn : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, smallRange);
     }
 
+    // simply sets random location between the allowed range
     void setRandomLocation()
     {
         xRange = Random.Range(-range, range);

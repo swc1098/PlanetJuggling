@@ -289,7 +289,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5403224, guid: 2af23f76a74ad474a8796679991ad856, type: 2}
       propertyPath: m_Mass
-      value: 0.2
+      value: 0.225
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403224, guid: 2af23f76a74ad474a8796679991ad856, type: 2}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5403224, guid: 2af23f76a74ad474a8796679991ad856, type: 2}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 11425052, guid: 2af23f76a74ad474a8796679991ad856, type: 2}
+      propertyPath: power
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2af23f76a74ad474a8796679991ad856, type: 2}
@@ -325,7 +337,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: -236}
+  m_AnchoredPosition: {x: -179, y: -191}
   m_SizeDelta: {x: 273, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &273918086
@@ -409,6 +421,10 @@ Prefab:
     - target: {fileID: 11492158, guid: 0491035d1f194bf45b665f3389fba276, type: 2}
       propertyPath: range
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5473862, guid: 0491035d1f194bf45b665f3389fba276, type: 2}
+      propertyPath: m_Mass
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0491035d1f194bf45b665f3389fba276, type: 2}
@@ -548,6 +564,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5417348, guid: 91fc8d44e7dcb35429c5afd534c07085, type: 2}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 91fc8d44e7dcb35429c5afd534c07085, type: 2}
   m_IsPrefabParent: 0
@@ -590,7 +610,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: -281}
+  m_AnchoredPosition: {x: -179, y: -232}
   m_SizeDelta: {x: 273, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1440271976
@@ -706,6 +726,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
