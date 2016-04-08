@@ -14,6 +14,13 @@ public class Player : MonoBehaviour
     // for force manipulaton on gameobject
     private Rigidbody rb;
 
+    // This allows instantiation of game object
+    private GameObject ball;
+
+    // get game manager
+    private GameManager gm;
+
+
     // Use this for initialization
     void Start()
     {
@@ -22,6 +29,9 @@ public class Player : MonoBehaviour
 
         // find player's rigidbody
         rb = gameObject.GetComponent<Rigidbody>();
+
+        // get the game manager script
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -39,10 +49,14 @@ public class Player : MonoBehaviour
         }
 
         // add force to player's jump
-        if (Input.GetKey(KeyCode.W) && falling != true)
+        if (Input.GetKeyDown(KeyCode.W) && falling != true)
         {
-            rb.AddRelativeForce(Vector3.up * 120);
-            falling = true;
+            //rb.AddRelativeForce(Vector3.up * 120);
+            //falling = true;
+            // spawns object on top of player. 
+            ball = (GameObject)Instantiate(Resources.Load("Ball"), gameObject.transform.position * 2, Quaternion.identity) as GameObject;
+
+            gm.information.enabled = false;
         }
     }
 

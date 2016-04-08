@@ -8,20 +8,21 @@ public class GameManager : MonoBehaviour {
     public Text scoreKeep;
     public Text ballBounce;
     public Text gameOver;
+    public Text information;
 
     // camera settings
     public float maxCameraZoom;
     public float minCameraZoom;
 
+    // a check to see if game needs to be zoomed
     public bool zoomed = false;
 
+    // check to see if game is in a start state
     public bool start = true;
 
     // int to be parsed into strings
     public int score;
     public int bounceCount;
-
-    private SphereCollider sphere;
 
     // Use this for initialization
     void Start ()
@@ -44,6 +45,7 @@ public class GameManager : MonoBehaviour {
         ballBounce.text = "Bounce Count: " + bounceCount.ToString();
         scoreKeep.text = "Score: " + score.ToString();
 
+        // just a check to see whether or not to zoom. Calls methods accordingly.
         if (zoomed == true)
         {
             zoomOut();
