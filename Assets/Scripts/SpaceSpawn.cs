@@ -30,7 +30,7 @@ public class SpaceSpawn : MonoBehaviour
         for (int x = 0; x < coinCount; x++)
         {
             setRandomLocation();
-            coin = (GameObject)Instantiate(Resources.Load("Coin"), new Vector3(xRange, yRange), Quaternion.identity) as GameObject;
+            coin = (GameObject)Instantiate(Resources.Load("Coin"), new Vector3(xRange, yRange), Quaternion.Euler(0,0,45)) as GameObject;
             coin.transform.SetParent(GameObject.Find("CoinSpawner").transform);
         }
     }
