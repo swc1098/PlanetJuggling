@@ -9,14 +9,16 @@ public class Ball : MonoBehaviour
 
     private Rigidbody rb;
 
-    private GameManager gm;
+    private GameManager GM;
 
 	private GameObject player;
+
+	private Vector3 tempVelocity;
 
     // Use this for initialization
     void Start()
     {
-        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+        GM = GameObject.Find("GameManager").GetComponent<GameManager>();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		updatePower ();
 
@@ -28,6 +30,15 @@ public class Ball : MonoBehaviour
     void Update()
     {
 		//Debug.Log (direction);
+
+		if (GM.gameState == GameState.Pause) {
+			tempVelocity = rb.velocity;
+			rb.velocity = Vector3.zero;
+			rb.isKinematic = true;
+		} else if (GM.gameState == GameState.Game && rb.velocity == Vector3.zero) {
+			rb.isKinematic = false;
+			rb.velocity = tempVelocity;
+		}
     }
 
     void OnTriggerEnter(Collider c)
@@ -42,13 +53,13 @@ public class Ball : MonoBehaviour
 			updatePower ();
 			rb.velocity = Vector3.zero;
 			rb.AddForceAtPosition(power * direction, transform.position);
-            gm.bounceCount++;
+            GM.bounceCount++;
         }
 
     }
 
 	void updatePower () {
-		power = 100.0f * (1 + 0.05f * gm.bounceCount);
+		power = 100.0f * (1 + 0.05f * GM.bounceCount);
 	}
 
     void OnCollisionEnter(Collision c)
