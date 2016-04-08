@@ -4,10 +4,10 @@ using System.Collections.Generic;
 public class SpaceSpawn : MonoBehaviour
 {
     /// <summary>
-    /// range = The range that gravity affects
+    /// range = The range that allows coins to spawn
     /// smallRange = the range where coins/collectibles are not allowed to spawn
     /// </summary>
-    public float range = 10.0f;
+    public float range = 14.0f;
     public float smallRange = 4.0f;
 
     // This allows instantiation of game object
@@ -41,18 +41,17 @@ public class SpaceSpawn : MonoBehaviour
         // create a collider that detects every object that exists within the small range
         Collider[] collision = Physics.OverlapSphere(transform.position, smallRange);
 
-        List<Rigidbody> listOfBodies = new List<Rigidbody>();
-
         // using this, move it somewhere else
         foreach (Collider c in collision)
         {
             Rigidbody rb = c.attachedRigidbody;
-            if(rb.tag == "Coin")
+            if(rb != null && rb.tag == "Coin")
             {
                 setRandomLocation();
                 rb.transform.position = new Vector3(xRange, yRange);
             }
         }
+
     }
 
     // visual aid for determining positions

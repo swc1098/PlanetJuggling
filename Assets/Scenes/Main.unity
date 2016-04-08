@@ -289,7 +289,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5403224, guid: 2af23f76a74ad474a8796679991ad856, type: 2}
       propertyPath: m_Mass
-      value: 0.225
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 5403224, guid: 2af23f76a74ad474a8796679991ad856, type: 2}
       propertyPath: m_Drag
@@ -337,7 +337,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: -191}
+  m_AnchoredPosition: {x: -198.5, y: -191}
   m_SizeDelta: {x: 273, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &273918086
@@ -610,7 +610,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -179, y: -232}
+  m_AnchoredPosition: {x: -198.5, y: -232}
   m_SizeDelta: {x: 273, y: 41}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1440271976
@@ -820,6 +820,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1791277832}
   - 114: {fileID: 1791277831}
+  - 135: {fileID: 1791277833}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -841,6 +842,10 @@ MonoBehaviour:
   scoreKeep: {fileID: 273918086}
   ballBounce: {fileID: 1440271976}
   gameOver: {fileID: 123993869}
+  maxCameraZoom: 0
+  minCameraZoom: 0
+  zoomed: 0
+  start: 1
   score: 0
   bounceCount: 0
 --- !u!4 &1791277832
@@ -855,6 +860,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!135 &1791277833
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1791277830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 9
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1977359069
 Prefab:
   m_ObjectHideFlags: 0
@@ -897,6 +914,10 @@ Prefab:
     - target: {fileID: 11428052, guid: f2e4eb30fdb38544f971d85ee2d771bc, type: 2}
       propertyPath: smallRange
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11428052, guid: f2e4eb30fdb38544f971d85ee2d771bc, type: 2}
+      propertyPath: range
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f2e4eb30fdb38544f971d85ee2d771bc, type: 2}
