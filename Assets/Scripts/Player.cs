@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {	
+		// player spin animation
+		transform.Rotate(Vector3.up, 30f * Time.deltaTime);
+
 		// basic movement around planet
         if (Input.GetKey(KeyCode.A))
         {
