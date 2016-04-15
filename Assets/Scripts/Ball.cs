@@ -9,6 +9,7 @@ public class Ball : MonoBehaviour
 
     public float power;
 	public Vector3 direction;
+	public int bounceCount;
 
     private Rigidbody rb;
 
@@ -46,12 +47,13 @@ public class Ball : MonoBehaviour
 			rb.velocity = Vector3.zero;
 			rb.AddForceAtPosition(power * direction, transform.position);
             gm.bounceCount++;
+			bounceCount++;
         }
 
     }
 
 	void updatePower () {
-		power = 100.0f * (1 + 0.05f * gm.bounceCount);
+		power = 100.0f * (1 + 0.05f * bounceCount);
 	}
 
     void OnCollisionEnter(Collision c)
