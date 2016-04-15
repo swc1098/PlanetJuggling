@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
     private GameManager gm;
 
 	private Vector3 initialPosition;
+	private GameObject mainPlanet;
+	private GameObject solarSystem;
 
     // Use this for initialization
     void Start()
@@ -23,6 +25,8 @@ public class Player : MonoBehaviour
 
         // get the game manager script
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
+		mainPlanet = GameObject.Find ("MainPlanet");
+		solarSystem = GameObject.Find ("SolarSystem");
     }
 
     // Update is called once per frame
@@ -35,12 +39,12 @@ public class Player : MonoBehaviour
 			
 			// basic movement around planet
 			if (Input.GetKey (KeyCode.A)) {
-				transform.RotateAround (GameObject.Find ("MainPlanet").transform.position, new Vector3 (0, 0, 1.0f), speed * Time.deltaTime);
+				transform.RotateAround (mainPlanet.transform.position, new Vector3 (0, 0, 1.0f), speed * Time.deltaTime);
 				transform.Rotate (Vector3.left, 800f * Time.deltaTime);
 			}
 
 			if (Input.GetKey (KeyCode.D)) {
-				transform.RotateAround (GameObject.Find ("MainPlanet").transform.position, new Vector3 (0, 0, -1.0f), speed * Time.deltaTime);
+				transform.RotateAround (mainPlanet.transform.position, new Vector3 (0, 0, -1.0f), speed * Time.deltaTime);
 				transform.Rotate (Vector3.right, 800f * Time.deltaTime);
 			}
 
@@ -50,7 +54,7 @@ public class Player : MonoBehaviour
 				//falling = true;
 				// spawns object on top of player. 
 				ball = (GameObject)Instantiate (Resources.Load ("Ball"), gameObject.transform.position * 2, Quaternion.identity) as GameObject;
-				ball.transform.SetParent (GameObject.Find ("SolarSystem").transform);
+				ball.transform.SetParent (solarSystem.transform);
 				gm.information.enabled = false;
 			}
 		}
