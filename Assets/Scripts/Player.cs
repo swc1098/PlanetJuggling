@@ -14,10 +14,12 @@ public class Player : MonoBehaviour
     // get game manager
     private GameManager gm;
 
+	private Vector3 initialPosition;
 
     // Use this for initialization
     void Start()
     { 
+		initialPosition = transform.position;
 
         // get the game manager script
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -53,6 +55,10 @@ public class Player : MonoBehaviour
 			}
 		}
     }
+
+	public void ResetPos() {
+		transform.position = initialPosition;
+	}
 
     // make sure that the player's falling bool is not affected by touching collectibles
 	/*

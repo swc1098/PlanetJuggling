@@ -45,11 +45,18 @@ public class GameManager : MonoBehaviour
 	public int score;
 	public int bounceCount;
 
-
+	// Scene objects
+	private SpaceSpawn coinSpawner;
+	private Player player;
 
 	// Use this for initialization
 	void Start ()
 	{
+		// Scene objects
+		coinSpawner = GameObject.Find("CoinSpawner").GetComponent<SpaceSpawn>();
+		player = GameObject.Find("Player").GetComponent<Player>();
+
+		// Menus
 		menus = new Dictionary<GameState, GameObject> ();
 		menus.Add (GameState.Start, GameObject.Find ("MainMenu"));
 		menus.Add (GameState.Game, GameObject.Find ("GameMenu")); // placeholder
@@ -108,6 +115,16 @@ public class GameManager : MonoBehaviour
 		// initial settings
 		score = 0;
 		bounceCount = 0;
+		GameObject[] balls = GameObject.FindGameObjectsWithTag ("Ball");
+		foreach (GameObject ball in balls) {
+			Destroy (ball);
+		}
+		GameObject[] coins = GameObject.FindGameObjectsWithTag ("Coin");
+		foreach (GameObject coin in coins) {
+			Destroy (coin);
+		}
+		coinSpawner.SpawnCoins ();
+		player.ResetPos ();
 	}
 	
 	// Update is called once per frame

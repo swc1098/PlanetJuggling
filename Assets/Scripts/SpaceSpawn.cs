@@ -26,14 +26,18 @@ public class SpaceSpawn : MonoBehaviour
         // a hard coded number of collectibles
         coinCount = 40;
 
-        // create collectibles on map
-        for (int x = 0; x < coinCount; x++)
-        {
-            setRandomLocation();
-            coin = (GameObject)Instantiate(Resources.Load("Coin"), new Vector3(xRange, yRange), Quaternion.Euler(0,0,45)) as GameObject;
-            coin.transform.SetParent(GameObject.Find("CoinSpawner").transform);
-        }
+		SpawnCoins ();
     }
+
+	public void SpawnCoins() {
+		// create collectibles on map
+		for (int x = 0; x < coinCount; x++)
+		{
+			setRandomLocation();
+			coin = (GameObject)Instantiate(Resources.Load("Coin"), new Vector3(xRange, yRange), Quaternion.Euler(0,0,45)) as GameObject;
+			coin.transform.SetParent(this.transform);
+		}
+	}
 
     // Update is called once per frame
     void Update()

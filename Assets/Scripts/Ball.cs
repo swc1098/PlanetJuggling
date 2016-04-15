@@ -58,17 +58,9 @@ public class Ball : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-        //if (c.gameObject.tag == "Planet")
-        //{
-        //    Destroy(gameObject);
-        //    Destroy(c.gameObject);
-        //    Destroy(GameObject.Find("Player"));
-        //    Destroy(GameObject.Find("CoinSpawner"));
-        //    gm.scoreKeep.enabled = false;
-        //    gm.ballBounce.enabled = false;
-        //    gm.gameOver.gameObject.SetActive(true);
-        //    gm.gameOver.enabled = true;
-		//
-        //}
+        if (c.gameObject.tag == "Planet")
+        {
+			gm.ChangeState (GameState.Lose);
+        }
     }
 }
