@@ -8,9 +8,6 @@ public class Player : MonoBehaviour
     // Fiddle with it until it's comfortable.
     public float speed;
 
-    // for force manipulaton on gameobject
-    private Rigidbody rb;
-
     // This allows instantiation of game object
     private GameObject ball;
 
@@ -21,8 +18,6 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     { 
-        // find player's rigidbody
-        rb = gameObject.GetComponent<Rigidbody>();
 
         // get the game manager script
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();

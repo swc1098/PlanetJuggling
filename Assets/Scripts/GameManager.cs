@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour {
     public Text ballBounce;
     public Text gameOver;
     public Text information;
+    public Text leaveText;
 
     // camera settings
     public float maxCameraZoom;
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour {
     {
         // initial settings
         minCameraZoom = 8;
-        maxCameraZoom = 12;
+        maxCameraZoom = 12.5f;
         score = 0;
         bounceCount = 0;
 

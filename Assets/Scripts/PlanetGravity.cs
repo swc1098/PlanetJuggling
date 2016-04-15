@@ -1,17 +1,23 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 public class PlanetGravity : MonoBehaviour
 {
     // the range where gravity is applied
     public float range = 10f;
 
-    Rigidbody self;
+    private Rigidbody self;
 
+    private GameManager gm;
+    
     // Use this for initialization
     void Start()
     {
         self = gameObject.GetComponent<Rigidbody>();
+
+        // get the game manager script
+        gm = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -52,4 +58,5 @@ public class PlanetGravity : MonoBehaviour
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, range);
     }
+
 }
