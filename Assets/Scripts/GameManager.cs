@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 		// keep the main camera as always orthographic
 		Camera.main.orthographic = true;
 		minCameraZoom = 8;
-		maxCameraZoom = 12.5f;
+		maxCameraZoom = 14;
 
 		// Set active menu to start game
 		ChangeState (GameState.Game);

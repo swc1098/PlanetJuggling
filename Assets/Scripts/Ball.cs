@@ -53,7 +53,7 @@ public class Ball : MonoBehaviour
     }
 
 	void updatePower () {
-		power = 100.0f * (1 + 0.05f * bounceCount);
+		power = 100.0f * (1 + 0.15f * bounceCount);
 	}
 
     void OnCollisionEnter(Collision c)
