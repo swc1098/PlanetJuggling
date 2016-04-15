@@ -419,7 +419,7 @@ GameObject:
   - 114: {fileID: 262218363}
   m_Layer: 5
   m_Name: MenuButton
-  m_TagString: Untagged
+  m_TagString: MenuButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -649,8 +649,9 @@ GameObject:
   - 224: {fileID: 336566281}
   - 222: {fileID: 336566283}
   - 114: {fileID: 336566282}
+  - 223: {fileID: 336566284}
   m_Layer: 5
-  m_Name: MainMeu
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -669,7 +670,7 @@ RectTransform:
   - {fileID: 243823027}
   - {fileID: 1274505891}
   m_Father: {fileID: 1473087938}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -1124, y: 0}
@@ -708,6 +709,25 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 336566280}
+--- !u!223 &336566284
+Canvas:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336566280}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &361723738
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,7 +925,7 @@ RectTransform:
   m_Children:
   - {fileID: 1260962610}
   m_Father: {fileID: 1473087938}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1123, y: -604}
@@ -1362,7 +1382,7 @@ GameObject:
   - 114: {fileID: 698229007}
   m_Layer: 5
   m_Name: RestartButton
-  m_TagString: Untagged
+  m_TagString: RestartButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1673,6 +1693,38 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 800484478}
+--- !u!1 &847140445
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 847140446}
+  m_Layer: 5
+  m_Name: GameMenu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &847140446
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 847140445}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1473087938}
+  m_RootOrder: 6
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &881023411
 GameObject:
   m_ObjectHideFlags: 0
@@ -1830,7 +1882,7 @@ GameObject:
   - 114: {fileID: 909912341}
   m_Layer: 5
   m_Name: RestartButton
-  m_TagString: Untagged
+  m_TagString: RestartButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2002,7 +2054,7 @@ Transform:
   m_LocalScale: {x: 100, y: 50, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!114 &939308129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,7 +2148,7 @@ GameObject:
   - 114: {fileID: 1021635481}
   m_Layer: 5
   m_Name: ResumeButton
-  m_TagString: Untagged
+  m_TagString: ResumeButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2206,7 +2258,7 @@ GameObject:
   - 114: {fileID: 1046176451}
   m_Layer: 5
   m_Name: MenuButton
-  m_TagString: Untagged
+  m_TagString: MenuButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2336,7 +2388,7 @@ RectTransform:
   m_Children:
   - {fileID: 1865032244}
   m_Father: {fileID: 1473087938}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1123, y: 0}
@@ -2531,7 +2583,7 @@ GameObject:
   - 114: {fileID: 1274505892}
   m_Layer: 5
   m_Name: StartButton
-  m_TagString: Untagged
+  m_TagString: StartButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2686,7 +2738,7 @@ Transform:
   m_LocalScale: {x: 5, y: 2.809045, z: 2.809045}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!114 &1432292358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2935,12 +2987,13 @@ RectTransform:
   - {fileID: 1440271975}
   - {fileID: 657951255}
   - {fileID: 1705554201}
+  - {fileID: 847140446}
   - {fileID: 2141782725}
   - {fileID: 1167515168}
   - {fileID: 473363196}
   - {fileID: 336566281}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -3006,7 +3059,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1637235082
 GameObject:
   m_ObjectHideFlags: 0
@@ -3257,7 +3310,7 @@ MonoBehaviour:
   maxCameraZoom: 0
   minCameraZoom: 0
   zoomed: 0
-  start: 1
+  gameState: 0
   score: 0
   bounceCount: 0
 --- !u!4 &1791277832
@@ -3271,7 +3324,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!135 &1791277833
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3492,7 +3545,7 @@ GameObject:
   - 114: {fileID: 2063324437}
   m_Layer: 5
   m_Name: RestartButton
-  m_TagString: Untagged
+  m_TagString: RestartButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3602,7 +3655,7 @@ GameObject:
   - 114: {fileID: 2140460627}
   m_Layer: 5
   m_Name: MenuButton
-  m_TagString: Untagged
+  m_TagString: MenuButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3728,7 +3781,7 @@ RectTransform:
   m_Children:
   - {fileID: 903310811}
   m_Father: {fileID: 1473087938}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1123, y: 583}

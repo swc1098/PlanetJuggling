@@ -7,6 +7,10 @@ TagManager:
   - Planet
   - Coin
   - Ball
+  - StartButton
+  - MenuButton
+  - ResumeButton
+  - RestartButton
   layers:
   - Default
   - TransparentFX
